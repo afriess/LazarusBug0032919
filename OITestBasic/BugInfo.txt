@@ -1,0 +1,48 @@
+using config file C:\Data\lazdev\trunk_trunk\lazarus\lazarus.cfg
+SetPrimaryConfigPath NewValue="C:\Data\lazdev\trunk_trunk\config_lazarus" -> "C:\Data\lazdev\trunk_trunk\config_lazarus"
+SetPrimaryConfigPath NewValue="C:\Data\lazdev\trunk_trunk\config_lazarus" -> "C:\Data\lazdev\trunk_trunk\config_lazarus"
+Hint: (lazarus) [TMainIDE.ParseCmdLineOptions] PrimaryConfigPath="C:\Data\lazdev\trunk_trunk\config_lazarus"
+Hint: (lazarus) [TMainIDE.ParseCmdLineOptions] SecondaryConfigPath="C:\Data\lazdev\trunk_trunk\lazarus"
+Hint: (lazarus) [TBuildManager.SetBuildTarget] Old=i386-win32-win32 New=i386-win32-win32 FPC=True LCL=False
+Hint: (lazarus) [TMainIDE.Destroy] B  -> inherited Destroy... TMainIDE
+Hint: (lazarus) [TMainIDE.Destroy] END
+[FORMS.PP] ExceptionOccurred 
+  Sender=EStackOverflow
+  Exception=Stack overflow
+  Stack trace:
+  $77AB9CA2
+  $004141A6
+  $0041022A
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+TApplication.HandleException Stack overflow
+  Stack trace:
+  $77AB9CA2
+  $004141A6
+  $0041022A
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
+  $00811A77  TLAZPACKAGEGRAPH__CALLREGISTERPROC,  line 5467 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00803F3F  TLAZPACKAGEGRAPH__REGISTERUNITHANDLER,  line 1856 of C:/Data/lazdev/trunk_trunk/lazarus/packager/packagesystem.pas
+  $00B03DBE  REGISTERUNIT,  line 55 of lazaruspackageintf.pas
+  $004718F2  REGISTER,  line 17 of interfacepkg.pas
