@@ -32,6 +32,7 @@ type
     ATestForm : TForm;
     ATestPanel : TPanel;
     ATestPanelSub : TPanel;
+    ATestPanelSubSub : TPanel;
 
     procedure FreeUsedObjects;
   public
@@ -54,6 +55,7 @@ begin
   BuFree.Enabled:= not BuCreate.Enabled;
 
   DUT := TObjectInspectorDlg.Create(nil);
+  DUT.Caption:= 'My ObjectInspector';
 
   // create the PropertyEditorHook (the interface to the properties)
   ThePropertyEditorHook:=TPropertyEditorHook.Create(DUT);
@@ -61,14 +63,22 @@ begin
 
   // Create components
   ATestForm :=  TForm.Create(nil);
+  ATestForm.Name:= 'Main';
   // Create a Panel
   ATestPanel := TPanel.Create(ATestForm);
   ATestPanel.Parent:=ATestForm;
+  ATestPanel.Name:='PanelA';
   ATestPanel.Caption:= 'Panel';
   // Create in the panel a panel (to see the chain)
-  ATestPanelSub := TPanel.Create(ATestPanel);
+  ATestPanelSub := TPanel.Create(ATestForm);
   ATestPanelSub.Parent := ATestPanel;
+  ATestPanelSub.Name:= 'SubPanelA';
   ATestPanelSub.Caption:= 'Sub Panel';
+  // Create in the panel a panel (to see the chain)
+  ATestPanelSubSub := TPanel.Create(ATestForm);
+  ATestPanelSubSub.Parent := ATestPanelSub;
+  ATestPanelSubSub.Name:= 'SubSubPanelA';
+  ATestPanelSubSub.Caption:= 'SubSub Panel';
 
   ThePropertyEditorHook.LookupRoot:=ATestForm;
 
