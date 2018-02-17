@@ -59,7 +59,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="GuiOITest.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -72,6 +72,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uOITest"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="intfcomp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="IntfComp"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

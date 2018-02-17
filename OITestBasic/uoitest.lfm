@@ -8,22 +8,31 @@ object Form1: TForm1
   ClientWidth = 320
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  object BuCreate: TButton
+  object BuCreateFormNormal: TButton
     Left = 16
     Height = 25
     Top = 8
-    Width = 75
-    Caption = 'BuCreate'
-    OnClick = BuCreateClick
+    Width = 139
+    Caption = 'Create normal Form'
+    OnClick = BuCreateFormNormalClick
     TabOrder = 0
   end
   object BuFree: TButton
     Left = 16
     Height = 25
-    Top = 48
+    Top = 136
     Width = 75
     Caption = 'BuFree'
     OnClick = BuFreeClick
     TabOrder = 1
+  end
+  object BuCreateFormIntf: TButton
+    Left = 16
+    Height = 25
+    Top = 40
+    Width = 139
+    Caption = 'Create Form Interface'
+    OnClick = BuCreateFormIntfClick
+    TabOrder = 2
   end
 end
