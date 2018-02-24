@@ -11,6 +11,7 @@ type
 
   // define the Interface
   ITestInterface =  interface
+     ['{25AD18D5-3457-446D-8732-1BBF04481DE5}']
       function OnlyDummy: integer;
     end;
 
@@ -24,6 +25,7 @@ type
   protected
 
   public
+    destructor Destroy; override;
 
   published
     property ObjectHasInterface: ITestInterface read GetObjectHasInterface write SetObjectHasInterface;
@@ -67,7 +69,14 @@ end;
 
 procedure TIntfComp.SetObjectHasInterface(AValue: ITestInterface);
 begin
-  FObjectHasInterface:= AValue;
+  FObjectHasInterface := AValue;
+end;
+
+destructor TIntfComp.Destroy;
+begin
+  pointer(FObjectHasInterface):= nil;
+//  FObjectHasInterface:= nil;
+  inherited Destroy;
 end;
 
 end.

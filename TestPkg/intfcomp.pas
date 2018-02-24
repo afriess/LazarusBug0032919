@@ -5,14 +5,16 @@ unit IntfComp;
 interface
 
 uses
-  Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, LCLProc;
 
 type
 
-  // define the Interface
-  ITestInterface =  interface
-      function OnlyDummy: integer;
-    end;
+{$interfaces com}
+  ITestInterface = interface
+    ['{DC209DB2-6E2D-4680-93D6-5D9B3983C0D3}']
+    function OnlyDummy: integer;
+  end;
+{$interfaces com}
 
   { TIntfComp }
 
@@ -22,22 +24,18 @@ type
     function GetObjectHasInterface: ITestInterface;
     procedure SetObjectHasInterface(AValue: ITestInterface);
   protected
-
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
   public
-
+    destructor Destroy; override;
   published
     property ObjectHasInterface: ITestInterface read GetObjectHasInterface write SetObjectHasInterface;
   end;
 
-  { TCompHasIntf }
+  { TCompInterface }
 
-  TCompHasIntf = class(TComponent, ITestInterface)
+  TCompInterface = class(TComponent, ITestInterface)
   private
-  protected
-
-  public
     function OnlyDummy: integer;
-
   end;
 
 
@@ -47,27 +45,42 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('ShowBug',[TIntfComp,TCompHasIntf]);
+  RegisterComponents('TestInterface', [TIntfComp, TCompInterface]);
 end;
 
-{ TCompHasIntf }
+{ TCompInterface }
 
-function TCompHasIntf.OnlyDummy: integer;
+function TCompInterface.OnlyDummy: integer;
 begin
-  // Only a Dummy :-)
-  Result:= 0;
+  Result := -1;
 end;
 
 { TIntfComp }
 
 function TIntfComp.GetObjectHasInterface: ITestInterface;
 begin
-  Result:= FObjectHasInterface;
+  Result := FObjectHasInterface;
 end;
 
 procedure TIntfComp.SetObjectHasInterface(AValue: ITestInterface);
 begin
-  FObjectHasInterface:= AValue;
+  FObjectHasInterface := AValue;
+end;
+
+procedure TIntfComp.Notification(AComponent: TComponent; Operation: TOperation);
+begin
+  inherited Notification(AComponent, Operation);
+  // if ObjectHasInterface is being removed then we need to make sure it is
+  // removed from here too
+  if (Operation = opRemove) and Assigned(AComponent)
+  and AComponent.IsImplementorOf(ObjectHasInterface) then
+    Pointer(FObjectHasInterface) := nil;
+end;
+
+destructor TIntfComp.Destroy;
+begin
+  Pointer(FObjectHasInterface) := nil;
+  inherited Destroy;
 end;
 
 end.

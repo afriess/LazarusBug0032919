@@ -106,7 +106,7 @@ begin
     BuFree.Enabled:= not (BuCreateFormNormal.Enabled or BuCreateFormIntf.Enabled);
 
     DUT := TObjectInspectorDlg.Create(nil);
-    DUT.Caption:= 'My ObjectInspector';
+    DUT.Caption:= 'My bad ObjectInspector';
 
     // create the PropertyEditorHook (the interface to the properties)
     ThePropertyEditorHook:=TPropertyEditorHook.Create(DUT);
@@ -120,7 +120,7 @@ begin
     ATestIntf.Name := 'ATestIntf';
     ATestHasIntf := TCompHasIntf.Create(ATestForm); // This component has an Interface
     ATestHasIntf.Name:= 'ATestHasIntf';
-    ATestIntf.ObjectHasInterface := ATestHasIntf;
+    ATestIntf.ObjectHasInterface := ITestInterface(ATestHasIntf);
     ATestIntf.GetParentComponent;
     ThePropertyEditorHook.LookupRoot:=ATestForm;
 
